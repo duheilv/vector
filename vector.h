@@ -1,8 +1,6 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-#include <Arduino.h>
-
 // Minimal class to replace std::vector
 template<typename Data>
 class vector {
