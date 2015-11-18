@@ -1,6 +1,9 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+#include <cstdlib>
+#include <cstring>
+
 // Minimal class to replace std::vector
 template<typename Data>
 class vector {
@@ -48,9 +51,11 @@ public:
       }
    }
 
-   // Clears the entire array. Does not call the destructor of complex objects. Does not reallocate.
+   // Clears the entire array. Does not call the destructor of complex objects.
    void clear(void) {
       d_size = 0;
+      d_capacity = 0;
+      free(d_data);
    }
 
    // Size getter
